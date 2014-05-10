@@ -98,7 +98,6 @@ app.directive('angularChessboard', function() {
 
         if (scope.board.selectedFrom === null)
         {
-          alert('111');
           scope.board.selectedFrom = square;
 
         }

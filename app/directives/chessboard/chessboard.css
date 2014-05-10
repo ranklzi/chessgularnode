@@ -31,6 +31,10 @@
     height:50px;*/
 
 }
+.chessboard-square.selected
+{
+	border: solid;
+}
 .square-color-0
 {
 	background-color:brown;
@@ -43,8 +47,4 @@
 {
 	/*font-size: 15px;*/
 	cursor: pointer;
-}
-.piece-rw
-{
-	
 }
