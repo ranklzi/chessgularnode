@@ -1,0 +1,50 @@
+.chessboard
+{
+	border:5px solid #333;
+	margin:0 auto;
+}
+.chessboard-row
+{
+	/*margin-bottom: -15px;*/
+	/*margin-top: -15px;*/
+}
+.chessboard-column
+{
+	/*
+	width:50px;
+	height:50px;*/
+}
+.chessboard-square
+{
+	min-width: 10px;
+	min-height: 10px;
+	/*background:#fff;
+    background:-moz-linear-gradient(top, #fff, #eee);
+    background:-webkit-gradient(linear,0 0, 0 100%, from(#fff), to(#eee));
+    box-shadow:inset 0 0 0 1px #fff;
+    -moz-box-shadow:inset 0 0 0 1px #fff;
+    -webkit-box-shadow:inset 0 0 0 1px #fff;
+    
+    text-align:center;
+    vertical-align:middle;
+    width:50px;
+    height:50px;*/
+
+}
+.square-color-0
+{
+	background-color:brown;
+}
+.square-color-1
+{
+	background-color:white;
+}
+.piece
+{
+	/*font-size: 15px;*/
+	cursor: pointer;
+}
+.piece-rw
+{
+	
+}
