@@ -31,7 +31,7 @@
     height:50px;*/
 
 }
-.chessboard-square.selected
+.selectedsquare
 {
 	border: solid;
 }

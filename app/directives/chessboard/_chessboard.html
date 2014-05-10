@@ -4,13 +4,10 @@
 	</div>
 	<div ng-repeat="row in board.squares" class="row chessboard-row">
 		<div class="col-xs-2">&nbsp;</div>
-		<div ng-repeat="col in row" positionx="{{$index}}" ng-click="selectSquare($index, board.squares.indexOf(row))" positiony="{{board.squares.indexOf(row)}}" class="col-xs-1 chessboard-square square-color-{{($parent.$index + $index) % 2}}" ng-style="{border: (board.squares.selectedFrom.x === $index) && (board.squares.selectedFrom.y === board.squares.indexOf(row)) ? solid : none}" ui-drop-listener='dropListener'>
+		<div ng-repeat="col in row" positionx="{{$index}}" ng-click="selectSquare($index, board.squares.indexOf(row))" positiony="{{board.squares.indexOf(row)}}" ng-class="{selectedsquare: isSelectedSquare($index, board.squares.indexOf(row))}" class="col-xs-1 chessboard-square square-color-{{($parent.$index + $index) % 2}}"  ui-drop-listener='dropListener'>
 				&nbsp;
 				<div ng-if="col.piece != ''" ui-draggable class="piece piece-{{col.piece}}">{{col.piece | piecefilter}}
 				</div>
-			<!--<div ng-if="($parent.$parent.$index + $parent.$index) % 2 == 1" style="background-color: white;">
-			{{($parent.$parent.$index + $parent.$index)%2}}
-			</div>-->
 		</div>
 		<div class="col-xs-2">&nbsp;</div>
 	</div>

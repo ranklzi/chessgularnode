@@ -115,6 +115,10 @@ app.directive('angularChessboard', function() {
         }
       };
 
+      scope.isSelectedSquare = function(x, y){
+        return scope.board.selectedFrom !== null && scope.board.selectedFrom.x === x && scope.board.selectedFrom.y === y;
+      };
+
 
 
       scope.dropListener = function (eDraggable, eDroppable) {
