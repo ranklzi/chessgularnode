@@ -16,7 +16,8 @@ angular.module('appApp', [
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/home',
-            templateUrl: '/views/partials/main.html'
+            templateUrl: '/views/partials/main.html',
+            controller: 'MainCtrl'
         })
         
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================

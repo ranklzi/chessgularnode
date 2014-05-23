@@ -1,6 +1,7 @@
 'use strict';
 
-var app = angular.module('angular-chessboard', [
+var app = angular.module('angular-chessboard', ['btford.socket-io'
+  
     //'ngTouch'
 ]);
 
@@ -14,8 +15,11 @@ app.directive('angularChessboard', function() {
     // controller: function($scope, $element){
     //   this.awesomeVariable = "Awesome Content lives here!"
     // },
+    
     link: function(scope, element, attrs) {
       
+      
+
       scope.board = {};
       scope.board.squares = [];
       scope.board.turn = 'w';

@@ -1,8 +1,7 @@
-'use strict';
+angular.module('appApp').controller('MainCtrl', ['$scope', '$http', 'socket', function($scope, $http, socket){
+	
 
-angular.module('appApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $http.get('/api/awesomeThings').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
-  });
+	console.log(socket);
+
+
+}]);

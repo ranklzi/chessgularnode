@@ -2,6 +2,7 @@
 {
 	border:5px solid #333;
 	margin:0 auto;
+	height:auto;
 }
 .chessboard-row
 {
@@ -33,7 +34,7 @@
 }
 .selectedsquare
 {
-	border: solid;
+	border: solid 1px;
 }
 .square-color-0
 {
