@@ -6,6 +6,7 @@ angular.module('appApp', [
   'ngSanitize',
   'ui.router',
   'angular-chessboard'
+
 ])
   .config(function($stateProvider, $urlRouterProvider) {
     

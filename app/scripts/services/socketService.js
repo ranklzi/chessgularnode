@@ -1,10 +1,12 @@
+var app = angular.module('appApp');
 app.factory('socket', function ($rootScope) {
   var socket = io.connect('http://127.0.0.1:9001');
   console.log(socket);
 
   return {
     on: function (eventName, callback) {
-      socket.on(eventName, function () {  
+      socket.on(eventName, function () { 
+        console.log(eventName); 
         var args = arguments;
         $rootScope.$apply(function () {
           callback.apply(socket, args);

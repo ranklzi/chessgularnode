@@ -5,7 +5,7 @@ var app = angular.module('angular-chessboard', ['btford.socket-io'
     //'ngTouch'
 ]);
 
-app.directive('angularChessboard', function() {
+app.directive('angularChessboard', ['socket', function(socket) {
   return {
     restrict: 'A',
 
@@ -17,6 +17,8 @@ app.directive('angularChessboard', function() {
     // },
     
     link: function(scope, element, attrs) {
+
+      console.log(attrs);
       
       
 
@@ -96,6 +98,17 @@ app.directive('angularChessboard', function() {
         scope.board.squares[yTarget][xTarget].piece = piece;
 
         scope.board.squares[ySource][xSource].piece = {};
+
+        var message = {};
+        message.from = {};
+        message.from.x = xSource;
+        message.from.y = ySource;
+        message.to = {};
+        message.to.x = xTarget;
+        message.to.y = yTarget;
+        
+        message.type = 'move';
+        socket.emit('gameMessage', message);
       };
       scope.selectSquare = function(xSelected, ySelected){
         var square = { 'x' : xSelected, 'y' : ySelected};
@@ -151,7 +164,7 @@ app.directive('angularChessboard', function() {
     templateUrl: '/directives/chessboard/_chessboard.html'
 
   };
-});
+}]);
 
 app.directive('uiDraggable', function () {
             return {

@@ -15,8 +15,13 @@ var config = require('./lib/config/config');
 
 // Setup Express
 var app = express();
+var passport = require('passport');
+
 require('./lib/config/express')(app);
 require('./lib/routes')(app);
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Start server
 app.listen(config.port, config.ip, function () {
@@ -32,7 +37,7 @@ io.sockets.on('connection', function (socket) {
 	console.log('connecting');
   io.sockets.emit('this', { will: 'be received by everyone'});
 
-  socket.on('private message', function (from, msg) {
+  socket.on('gameMessage', function (from, msg) {
     console.log('I received a private message by ', from, ' saying ', msg);
   });
 
