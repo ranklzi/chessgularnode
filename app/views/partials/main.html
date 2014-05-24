@@ -1,6 +1,27 @@
-<div ng-include="'partials/navbar'"></div>
-<input type="button" ng-click="sendMessage()" value="ddddd" />
 
-<!-- <div ng-controller="MainCtrl"> -->
-  <div angular-chessboard="" my-method="makeMove"></div> 
-<!-- </div> -->
+
+
+<div ng-controller="MainCtrl" class="main-container">
+    <div class="row">
+        <div class="col-md-2 main-nav-cell">
+            <ul class="nav nav-pills nav-stacked nav-menu">
+                <li ng-class="{active: isCurrentLocation('/games/list')}">
+                    <a ui-sref="games.list">My Games</a>
+                </li>
+                <li ng-class="{active: isCurrentLocation('/settings')}">
+                    <a ui-sref="settings">Settings</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-10 main-content-cell">
+            <div class="row">
+                <!-- <div class="col-md-6">breadcrumbs > item1 > item2</div>
+                <div class="col-md-6 right-flow">login</div> -->
+            </div>
+            <div class="row main-view">
+                <div ui-view class="well main-view">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

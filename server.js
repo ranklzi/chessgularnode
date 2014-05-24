@@ -2,7 +2,8 @@
 
 var express = require('express'),
 	http = require('http'), 
-    socketio = require('socket.io');
+    socketio = require('socket.io'),
+    db = require('./app/models');
 
 /**
  * Main application file
@@ -15,19 +16,23 @@ var config = require('./lib/config/config');
 
 // Setup Express
 var app = express();
-var passport = require('passport');
+
 
 require('./lib/config/express')(app);
 require('./lib/routes')(app);
 
-app.use(passport.initialize());
-app.use(passport.session());
 
-// Start server
-app.listen(config.port, config.ip, function () {
-  console.log('Express server listening on %s:%d, in %s mode', config.ip, config.port, app.get('env'));
+db.sequelize.sync().complete(function(err) {
+  if (err) {
+    console.log(err);
+    throw err
+  } else {
+    // Start server
+    app.listen(config.port, config.ip, function () {
+      console.log('Express server listening on %s:%d, in %s mode', config.ip, config.port, app.get('env'));
+    });
+  }
 });
-
 
 var io = require('socket.io').listen(9001);
 // var io = socketio.listen(http.createServer(app));

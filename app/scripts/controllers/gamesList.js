@@ -1,4 +1,4 @@
-angular.module('appApp').controller('MainCtrl', 
+angular.module('appApp').controller('GamesListCtrl', 
   ['$location', '$state', '$scope', '$http', 'socket', function($location, $state, $scope, $http, socket){
 	
   socket.on('init', function (data) {
