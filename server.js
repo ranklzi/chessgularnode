@@ -3,7 +3,7 @@
 var express = require('express'),
 	http = require('http'), 
     socketio = require('socket.io'),
-    db = require('./app/models');
+    db = require('./lib/models');
 
 /**
  * Main application file
